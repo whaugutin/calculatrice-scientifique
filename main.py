@@ -1,16 +1,48 @@
-def verify_number(nbr):
-    while True:
-        try:
-            float(nbr)
-            return nbr
-        except ValueError:
-            nbr = input("Entrée invalide. Veuillez entrer un nombre valide: ")
+from functions import verify_number
 
-def main():    
-    nbr_1 = verify_number(input("Entrer le premier nombre: "))
-    nbr_2 = verify_number(input("Entrer le deuxième nombre: "))
+def main(): 
+    
+    continuer = True
+    while continuer:
+        print("---Operations Mathématiques de Base---")
+        print("1. Addition de deux nombres")
+        print("2. Soustraction de deux nombres")
+        print("3. Multiplication de deux nombres")
+        print("4. Division de deux nombres")
+        print("0. Quitter")
 
-    print("Le résultat de l'addition est: ", float(nbr_1) + float(nbr_2))
+        option = int(verify_number(input("Choisissez une option >>> ")))
+
+        if option == 0:
+            print("Au revoir")
+            exit()
+
+        if option not in [1, 2, 3, 4]:
+            print("Choix invalide \n")
+            continue
+
+        nbr_1 = verify_number(input("Entrer le premier nombre: "))
+        nbr_2 = verify_number(input("Entrer le deuxième nombre: "))
+        resultat = 0
+
+        if option == 1:
+            resultat = nbr_1 + nbr_2
+        elif option == 2:
+            resultat = nbr_1 - nbr_2
+        elif option == 3:
+            resultat = nbr_1 * nbr_2
+        elif option == 4:
+            while nbr_2 == 0:
+                print("Erreur: Division par zéro n'est pas permise.")
+                nbr_2 = verify_number(input("Entrer le deuxième nombre: "))
+                return
+            resultat = nbr_1 / nbr_2
+        
+
+        print("Le résultat est: ", resultat)
+        choix = input("Voulez-vous continuer? (O/N) [N] >>> ")
+        if choix.upper() != "O":
+            continuer = False
 
 
 if __name__ == "__main__":

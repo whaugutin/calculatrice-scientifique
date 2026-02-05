@@ -36,10 +36,12 @@ def main():
             continue
 
         if option == 5:
-            with open("data.txt") as file:
-                print(file.read())
+            try:
+                with open("data.txt") as file:
+                    print(file.read())
+            except FileNotFoundError as e:
+                print(e)
             continue
-
 
         nbr_1 = verify_number(input("Entrer le premier nombre: "))
         nbr_2 = verify_number(input("Entrer le deuxième nombre: "))

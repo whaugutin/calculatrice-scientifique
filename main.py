@@ -10,12 +10,19 @@ def main():
 
     continuer = True
     while continuer:
-        print("---Operations Mathématiques de Base---")
-        print("1. Addition de deux nombres")
-        print("2. Soustraction de deux nombres")
-        print("3. Multiplication de deux nombres")
-        print("4. Division de deux nombres")
-        print("0. Quitter")
+
+        options = [
+            "Quitter",
+            "Addition de deux nombres",
+            "Soustraction de deux nombres",
+            "Multiplication de deux nombres",
+            "Division de deux nombres",
+            "Historique des opériations"
+        ]
+
+        print("\n=== Calculatrice Scientifique ===\n")
+        for i in range(len(options)):
+            print(f"{i}. {options[i]}")
 
         option = int(verify_number(input("Choisissez une option >>> ")))
 
@@ -24,9 +31,15 @@ def main():
             print("Au revoir")
             exit()
 
-        if option not in [1, 2, 3, 4]:
-            print("Choix invalide \n")
+        if option not in range(6):
+            print("\nChoix invalide. Choisissez une option en 0 et 5")
             continue
+
+        if option == 5:
+            with open("data.txt") as file:
+                print(file.read())
+            continue
+
 
         nbr_1 = verify_number(input("Entrer le premier nombre: "))
         nbr_2 = verify_number(input("Entrer le deuxième nombre: "))
@@ -44,6 +57,8 @@ def main():
                 nbr_2 = verify_number(input("Entrer le deuxième nombre: "))
                 return
             resultat = nbr_1 / nbr_2
+        
+
         
         # file = open("data.txt", "a")
         # file.write(f"{nbr_1} {'+' if option == 1 else '-' if option == 2 else '*' if option == 3 else '/'} {nbr_2} = {resultat}\n")

@@ -45,6 +45,12 @@ def main():
                 return
             resultat = nbr_1 / nbr_2
         
+        # file = open("data.txt", "a")
+        # file.write(f"{nbr_1} {'+' if option == 1 else '-' if option == 2 else '*' if option == 3 else '/'} {nbr_2} = {resultat}\n")
+        # file.close()
+
+        with open("data.txt", "a") as file:
+            file.write(f"{nbr_1} {'+' if option == 1 else '-' if option == 2 else '*' if option == 3 else '/'} {nbr_2} = {resultat}\n")
 
         print("Le résultat est: ", resultat)
         choix = input("Voulez-vous continuer? (O/N) [N] >>> ")

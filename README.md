@@ -1,5 +1,9 @@
 # PROJET CALCULATRICE SCIENTIFIQUE
 Ce pr
 
-## AAAAAAAAAAAAA
-C
+---
+
+## AObjectifs
+- 1
+- 2
+- 3

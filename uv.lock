@@ -6,3 +6,18 @@ requires-python = ">=3.14"
 name = "calculatrice-scientifique"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "ipyllogger" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "ipyllogger", specifier = ">=1.0.0" }]
+
+[[package]]
+name = "ipyllogger"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/f8/ec/043695c0165b5f527dea288fedcd741dc682de4a67f9a073d101e9cd4787/ipyllogger-1.0.0.tar.gz", hash = "sha256:123e3fe46a4d462f4e38240a5c7f1536d91ce53b290bcd8a72b4130a09a5ef29", size = 3705, upload-time = "2023-11-20T23:54:22.234Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/27/2e/17ba3126d9eadd107d0fe403917eb8551635c7437d48b0b4da09120bce35/ipyllogger-1.0.0-py3-none-any.whl", hash = "sha256:8536085a29ddca07bb4962c2f62eddffbc0fe4b5224e6cc1c3eec3547df34d95", size = 4518, upload-time = "2023-11-20T23:54:19.375Z" },
+]

@@ -1,7 +1,13 @@
 from functions import verify_number
+from ipyllogger import Logger
+from ipyllogger import level
+
+logger = Logger()
 
 def main(): 
     
+    logger.log("Session Starts", level=level.WARNING)
+
     continuer = True
     while continuer:
         print("---Operations Mathématiques de Base---")
@@ -14,6 +20,7 @@ def main():
         option = int(verify_number(input("Choisissez une option >>> ")))
 
         if option == 0:
+            logger.log("Session ends", level=level.WARNING)
             print("Au revoir")
             exit()
 
